@@ -1,0 +1,40 @@
+Source: ruby-loofah
+Section: ruby
+Priority: optional
+Maintainer: Debian Ruby Team <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
+Uploaders: Cédric Boutillier <boutil@debian.org>,
+           Balasankar C <balasankarc@autistici.org>,
+           Georg Faerber <georg@debian.org>
+Build-Depends: debhelper-compat (= 13),
+               gem2deb,
+               ruby-crass,
+               ruby-json,
+               ruby-minitest,
+               ruby-nokogiri,
+               ruby-rr,
+               ruby-test-unit
+Standards-Version: 4.5.1
+Vcs-Git: https://salsa.debian.org/ruby-team/ruby-loofah.git
+Vcs-Browser: https://salsa.debian.org/ruby-team/ruby-loofah
+Homepage: https://github.com/flavorjones/loofah
+Testsuite: autopkgtest-pkg-ruby
+XS-Ruby-Versions: all
+Rules-Requires-Root: no
+
+Package: ruby-loofah
+Architecture: all
+XB-Ruby-Versions: ${ruby:Versions}
+Depends: ruby,
+         ruby-crass,
+         ruby-nokogiri,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: manipulation and transformation of HTML/XML documents and fragments
+ Loofah is a general library for manipulating and transforming HTML/XML
+ documents and fragments. It's built on top of Nokogiri and libxml2, so
+ it's fast and has a nice API.
+ .
+ Loofah excels at HTML sanitization (XSS prevention). It includes some
+ nice HTML sanitizers, which are based on HTML5lib's whitelist, so it
+ most likely won't make your codes less secure. (These statements have
+ not been evaluated by Netexperts.)
